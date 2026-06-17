@@ -150,7 +150,7 @@
       >;
     };
 
-    raise {
+    right {
       display-name = "Right";
       bindings = <
 &trans  &trans     &kp F3  &kp F4            &kp F5             &kp F6         &kp F7       &kp MINUS       &kp EQUAL         &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &trans
@@ -160,7 +160,7 @@
       >;
     };
 
-    lower {
+    left {
       display-name = "Left";
       bindings = <
 &trans              &kp EXCL   &kp AT  &kp HASH   &kp DLLR   &kp PRCNT    &kp CARET  &kp AMPS  &kp STAR  &kp LPAR  &kp RPAR  &kp SLASH
