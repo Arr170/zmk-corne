@@ -163,7 +163,7 @@
     left {
       display-name = "Left";
       bindings = <
-&trans              &kp EXCL   &kp AT  &kp HASH   &kp DLLR   &kp PRCNT    &kp CARET  &kp AMPS  &kp STAR  &kp LPAR  &kp RPAR  &kp SLASH
+&trans              &kp EXCL   &kp AT  &kp HASH   &kp DLLR   &kp PRCNT    &kp CARET  &trans    &trans    &trans    &trans    &trans
 &trans              &kp N1     &kp N2  &kp N3     &kp N4     &kp N5       &kp N6     &kp N7    &kp N8    &kp N9    &kp N0    &trans
 &kp LC(LEFT_SHIFT)  &kp GRAVE  &trans  &kp LC(X)  &kp LG(V)  &trans       &kp UNDER  &kp PLUS  &kp LBRC  &kp RBRC  &kp PIPE  &kp RIGHT_SHIFT
                                        &trans     &trans     &trans       &trans     &trans    &trans
