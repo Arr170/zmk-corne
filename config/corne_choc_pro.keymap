@@ -12,6 +12,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/zmk/rgb.h>
 
 &mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
 
@@ -171,7 +172,7 @@
 
     special {
       bindings = <
-&trans  &trans  &trans  &trans                &trans          &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &rgb_ug RGB_OFF       &trans          &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &kp LG(RS(NUMBER_4))  &kp LG(LS(N5))  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans                &trans          &trans                  &trans  &trans  &trans  &trans  &trans  &trans
                         &trans                &trans          &trans                  &trans  &trans  &trans
