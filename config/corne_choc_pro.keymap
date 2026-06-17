@@ -144,14 +144,14 @@
 &kp ESC      &kp Q  &kp W             &kp E    &kp R        &kp T        &kp Y    &kp U       &kp I          &kp O    &kp P          &kp BACKSPACE
 &kp TAB  &kp A  &kp S  &kp D  &kp F  &kp G        &kp H    &kp J       &kp K          &kp L    &kp SEMICOLON  &kp APOS
 &kp LEFT_SHIFT    &kp Z  &kp X             &kp C       &kp V        &kp B        &kp N    &kp M       &kp COMMA      &kp DOT  &kp FSLH       &hm RIGHT_SHIFT RET
-                                      &kp LCTRL    &kp LEFT_GUI   &lt 1 SPACE    &lt 2 SPACE  &kp RIGHT_GUI &kp RIGHT_ALT
+                                      &kp LCTRL    &kp LEFT_GUI   &lt 2 SPACE    &lt 1 SPACE  &kp RIGHT_GUI &kp RIGHT_ALT
       >;
     };
 
     raise {
       display-name = "Right";
       bindings = <
-&kp F1  &kp F2  &kp F3  &kp F4   &kp F5   &kp F6        &kp F7       &kp F8          &kp F9            &kp F10  &kp F11  &kp F12
+&kp F1  &kp F2  &kp F3  &kp F4   &kp F5   &kp F6        &kp F7       &kp DASH   &kp F9            &kp F10  &kp F11  &kp F12
 &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12       &trans       &kp LEFT   &kp DOWN &kp UP &kp RIGHT   &kp BSLH
 &trans  &mo 4   &trans  &kp LC(LG(LEFT))  &kp LC(LG(RIGHT))  &kp LG(TAB)    &Calculator  &excel_bigword  &excel_smallword  &trans   &trans   &trans
                         &trans            &trans             &trans         &trans       &trans          &trans
