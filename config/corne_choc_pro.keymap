@@ -99,7 +99,7 @@
     full_window: full_window {
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
-      bindings = <&kp LA(LG(UP_ARROW))>;
+      bindings = <&kp LG(LC(UP_ARROW))>;
       label = "FULL_WINDOW";
     };
   };
