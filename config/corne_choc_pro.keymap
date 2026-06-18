@@ -11,7 +11,6 @@
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/rgb.h>
 
 &mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
@@ -71,69 +70,37 @@
       key-positions = <10 11>;
     };
 
-    Star {
-      bindings = <&kp RS(N8)>;
-      key-positions = <3 4>;
+    down {
+      bindings = <&kp PAGE_UP>;
+      key-positions = <24 25>;
     };
 
-    Ctrl_Atl_Del {
-      bindings = <&kp LA(LC(DEL))>;
-      key-positions = <23 22>;
-    };
-
-    Copy {
-      bindings = <&kp LC(C)>;
-      key-positions = <3 2>;
-    };
-
-    Paste {
-      bindings = <&kp LC(V)>;
-      key-positions = <15 14>;
-    };
-
-    WIN_V {
-      bindings = <&kp LG(V)>;
-      key-positions = <25 26>;
-    };
-
-    excel_downrows {
-      bindings = <&kp LS(LC(DOWN_ARROW))>;
-      key-positions = <29 28>;
-    };
-
-    symbol {
-      bindings = <&kp LA(LC(COMMA))>;
-      key-positions = <30 31>;
+    page_down {
+      bindings = <&kp PAGE_DOWN>;
+      key-positions = <23 24>;
     };
   };
 
   macros {
-    Calculator: Calculator {
+    left_window: left_window {
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
-      bindings = <&kp RG(S) &kp C &kp A &kp L &kp RET>;
-      label = "CALCULATOR";
+      bindings = <&kp LA(LG(LEFT_ARROW))>;
+      label = "LEFT_WINDOW";
     };
 
-    excel_bigword: excel_bigword {
+    right_window: right_window {
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
-      bindings = <&kp LA(H) &kp F &kp G>;
-      label = "EXCEL_BIGWORD";
+      bindings = <&kp LA(LG(RIGHT))>;
+      label = "RIGHT_WINDOW";
     };
 
-    excel_smallword: excel_smallword {
+    full_window: full_window {
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
-      bindings = <&kp LA(H) &kp F &kp K>;
-      label = "EXCEL_SMALLWORD";
-    };
-
-    Double_Click: Double_Click {
-      compatible = "zmk,behavior-macro";
-      #binding-cells = <0>;
-      bindings = <&mkp LCLK &mkp LCLK>;
-      label = "DOUBLE_CLICK";
+      bindings = <&kp LA(LG(UP_ARROW))>;
+      label = "FULL_WINDOW";
     };
   };
 
@@ -153,28 +120,28 @@
     right {
       display-name = "Right";
       bindings = <
-&kp F1  &kp F2     &kp F3  &kp F4        &kp F5         &kp F6   &trans  &trans  &trans  &kp MINUS       &kp EQUAL         &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &trans
-&kp F7  &kp F8     &kp F9  &kp F10       &kp F11        &kp F12  &trans  &trans  &trans  &kp LEFT        &kp DOWN          &kp UP            &kp RIGHT          &kp BSLH
-&trans  &kp GRAVE  &trans  &kp LC(LEFT)  &kp LC(RIGHT)  &trans                   &trans  &excel_bigword  &excel_smallword  &trans            &trans             &trans
-                           &trans        &trans         &trans                   &trans  &trans          &trans
+&kp F1  &kp F2     &kp F3  &kp F4        &kp F5         &kp F6   &trans  &trans  &trans  &kp MINUS  &kp EQUAL  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &trans
+&kp F7  &kp F8     &kp F9  &kp F10       &kp F11        &kp F12  &trans  &trans  &trans  &kp LEFT   &kp DOWN   &kp UP            &kp RIGHT          &kp BSLH
+&trans  &kp GRAVE  &trans  &kp LC(LEFT)  &kp LC(RIGHT)  &trans                   &trans  &trans     &trans     &trans            &trans             &trans
+                           &trans        &trans         &mo 3                    &trans  &trans     &trans
       >;
     };
 
     left {
       display-name = "Left";
       bindings = <
-&trans          &kp EXCL   &kp AT  &kp HASH        &kp DLLR   &kp PRCNT  &trans  &trans  &kp CARET  &kp MINUS  &kp EQUAL  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &trans
-&trans          &kp N1     &kp N2  &kp N3          &kp N4     &kp N5     &trans  &trans  &kp N6     &kp N7     &kp N8     &kp N9            &kp N0             &trans
-&kp LEFT_SHIFT  &kp GRAVE  &trans  &kp LC(X)       &kp LG(V)  &trans                     &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC          &kp PIPE           &kp RIGHT_SHIFT
-                                   &studio_unlock  &trans     &trans                     &mo 3      &trans     &trans
+&trans          &kp EXCL   &kp AT  &kp HASH        &kp DLLR       &kp PRCNT  &trans  &trans  &kp CARET  &kp MINUS  &kp EQUAL  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &trans
+&trans          &kp N1     &kp N2  &kp N3          &kp N4         &kp N5     &trans  &trans  &kp N6     &kp N7     &kp N8     &kp N9            &kp N0             &kp BACKSLASH
+&kp LEFT_SHIFT  &kp GRAVE  &trans  &kp LC(LEFT)    &kp LC(RIGHT)  &trans                     &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC          &kp PIPE           &kp RIGHT_SHIFT
+                                   &studio_unlock  &kp LCTRL      &trans                     &mo 3      &kp RCTRL  &trans
       >;
     };
 
     special {
       bindings = <
-&trans  &trans  &trans  &rgb_ug RGB_OFF       &trans          &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &kp LG(RS(NUMBER_4))  &kp LG(LS(N5))  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans                &trans          &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &rgb_ug RGB_OFF       &trans          &trans  &trans  &trans  &trans  &trans  &left_window  &right_window  &trans  &trans
+&trans  &trans  &trans  &kp LG(RS(NUMBER_4))  &kp LG(LS(N5))  &trans  &trans  &trans  &trans  &trans  &trans        &trans         &trans  &trans
+&trans  &trans  &trans  &trans                &trans          &trans                  &trans  &trans  &trans        &trans         &trans  &trans
                         &studio_unlock        &trans          &trans                  &trans  &trans  &trans
       >;
     };
