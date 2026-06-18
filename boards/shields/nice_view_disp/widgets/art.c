@@ -19062,12 +19062,3 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMAGE_UNTITLE
     0xe9,
     0x49,
 };
-
-const lv_image_dsc_t Untitled = {
-    .header.cf = LV_COLOR_FORMAT_RGB565,
-    .header.magic = LV_IMAGE_HEADER_MAGIC,
-    .header.w = 68,
-    .header.h = 140,
-    .data_size = 9520 * 2,
-    .data = Untitled_map,
-};

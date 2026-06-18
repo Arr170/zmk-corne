@@ -115,6 +115,14 @@ int art_pos = 0;
 int top_pos = 92;
 #endif
 
+const lv_image_dsc_t Untitled = {
+    .header.cf = LV_IMG_CF_INDEXED_1BIT,
+    .header.w = 68,
+    .header.h = 140,
+    .data_size = 9520 * 2,
+    .data = Untitled_map,
+};
+
 int zmk_widget_status_init(struct zmk_widget_status *widget, lv_obj_t *parent) {
     widget->obj = lv_obj_create(parent);
     lv_obj_set_size(widget->obj, 160, 68);
